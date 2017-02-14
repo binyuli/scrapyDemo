@@ -10,6 +10,7 @@ from scrapy.item import Item, Field
 
 class ScrapydemoItem(Item):
     # define the fields for your item here like:
-    name = Field()
-    description = Field()
-    url = Field()
+    # name = Field()
+    # description = Field()
+    # url = Field()
+    title = Field()
