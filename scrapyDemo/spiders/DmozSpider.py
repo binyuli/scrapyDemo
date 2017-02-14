@@ -4,15 +4,15 @@ from scrapy.selector import Selector
 from scrapyDemo.items import ScrapydemoItem
 
 class DmozSpider(scrapy.Spider):
-    name = "dmoz"
+    name = "demo"
     allowed_domains = ["dmoz.org"]
     # start_urls = [
     #     "http://www.dmoz.org/Computers/Programming/Languages/Python/Books/",
     #     "http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/"
     # ]
+    # "http://www.landrover.com.cn/index.html"
     start_urls = [
         "http://www.jaguar.com.cn/index.html",
-        "http://www.landrover.com.cn/index.html"
     ]
 
     # def parse(self, response):
@@ -37,8 +37,8 @@ class DmozSpider(scrapy.Spider):
         items = []
         for site in sites:
             item = ScrapydemoItem()
-            title = site.xpath('text()').extract()
-            print title
-            item['title'] = title
+            title_list = site.xpath('text()').extract()
+            print title_list[0]
+            item['title'] = title_list
             items.append(item)
         return items
