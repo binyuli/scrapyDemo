@@ -9,7 +9,7 @@ from scrapy.exceptions import DropItem
 
 class ScrapydemoPipeline(object):
     # put all words in lowercase
-    words_to_filter = ['resource']
+    words_to_filter = ['pig']
 
     def process_item(self, item, spider):
         for word in self.words_to_filter:
